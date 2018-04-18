@@ -15,15 +15,15 @@
 <meta property="og:site_name" content="Yang&#39;s Blog">
 <meta property="og:description" content="title: lombok插件安装date: 2018-04-18 16:00:04 tags:javalombok初探之插件安装(idea版)第一步:找到配置下的插件管理器,点击插件仓库搜索lombok进行安装  第二步:配置编译器扫描注解,然后重启idea. 第三步:使用lombok时需要用到lombok jar包 这里给出maven地址12345&amp;lt;dependency&amp;gt;">
 <meta property="og:locale" content="Chinese">
-<meta property="og:image" content="/1.png">
-<meta property="og:image" content="/2.png">
-<meta property="og:image" content="/3.png">
-<meta property="og:image" content="/4.png">
-<meta property="og:updated_time" content="2018-04-18T08:13:11.834Z">
+<meta property="og:image" content="/yangblog/18/lombok插件安装/1.png">
+<meta property="og:image" content="/yangblog/18/lombok插件安装/2.png">
+<meta property="og:image" content="/yangblog/18/lombok插件安装/3.png">
+<meta property="og:image" content="/yangblog/18/lombok插件安装/4.png">
+<meta property="og:updated_time" content="2018-04-18T08:15:25.012Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yang&#39;s Blog">
 <meta name="twitter:description" content="title: lombok插件安装date: 2018-04-18 16:00:04 tags:javalombok初探之插件安装(idea版)第一步:找到配置下的插件管理器,点击插件仓库搜索lombok进行安装  第二步:配置编译器扫描注解,然后重启idea. 第三步:使用lombok时需要用到lombok jar包 这里给出maven地址12345&amp;lt;dependency&amp;gt;">
-<meta name="twitter:image" content="/1.png">
+<meta name="twitter:image" content="/yangblog/18/lombok插件安装/1.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -122,12 +122,12 @@
             
             <hr>
 <p>title: lombok插件安装<br>date: 2018-04-18 16:00:04</p>
-<h2 id="tags-java"><a href="#tags-java" class="headerlink" title="tags:java"></a>tags:java</h2><h1 id="lombok初探之插件安装-idea版"><a href="#lombok初探之插件安装-idea版" class="headerlink" title="lombok初探之插件安装(idea版)"></a>lombok初探之插件安装(idea版)</h1><h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步:"></a>第一步:</h2><p>找到配置下的插件管理器,点击插件仓库搜索lombok进行安装<br><img src="/1.png" alt=""></p>
-<p><img src="/2.png" alt=""></p>
-<h2 id="第二步-配置编译器扫描注解-然后重启idea"><a href="#第二步-配置编译器扫描注解-然后重启idea" class="headerlink" title="第二步:配置编译器扫描注解,然后重启idea."></a>第二步:配置编译器扫描注解,然后重启idea.</h2><p><img src="/3.png" alt=""></p>
+<h2 id="tags-java"><a href="#tags-java" class="headerlink" title="tags:java"></a>tags:java</h2><h1 id="lombok初探之插件安装-idea版"><a href="#lombok初探之插件安装-idea版" class="headerlink" title="lombok初探之插件安装(idea版)"></a>lombok初探之插件安装(idea版)</h1><h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步:"></a>第一步:</h2><p>找到配置下的插件管理器,点击插件仓库搜索lombok进行安装<br><img src="/yangblog/18/lombok插件安装/1.png" alt=""></p>
+<p><img src="/yangblog/18/lombok插件安装/2.png" alt=""></p>
+<h2 id="第二步-配置编译器扫描注解-然后重启idea"><a href="#第二步-配置编译器扫描注解-然后重启idea" class="headerlink" title="第二步:配置编译器扫描注解,然后重启idea."></a>第二步:配置编译器扫描注解,然后重启idea.</h2><p><img src="/yangblog/18/lombok插件安装/3.png" alt=""></p>
 <h2 id="第三步-使用lombok时需要用到lombok-jar包-这里给出maven地址"><a href="#第三步-使用lombok时需要用到lombok-jar包-这里给出maven地址" class="headerlink" title="第三步:使用lombok时需要用到lombok jar包 这里给出maven地址"></a>第三步:使用lombok时需要用到lombok jar包 这里给出maven地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;lombok&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;1.16.12&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="第四步-踩坑检测"><a href="#第四步-踩坑检测" class="headerlink" title="第四步:踩坑检测"></a>第四步:踩坑检测</h2><ol>
-<li>检测java编译器类型,请选择javac,并去掉使用目标模块的jdk作为编译器的勾选.(要不然,编译是无法通过的)<br><img src="/4.png" alt=""></li>
+<li>检测java编译器类型,请选择javac,并去掉使用目标模块的jdk作为编译器的勾选.(要不然,编译是无法通过的)<br><img src="/yangblog/18/lombok插件安装/4.png" alt=""></li>
 <li>JDK 一定要配置环境变量JAVA_HOME和PATH.</li>
 <li>配置文件lombok.config请与类同顶级包.请不要放在resources文件夹下,不然编译无法生效</li>
 <li>做完这些检测请重启吧少年.</li>
@@ -135,7 +135,7 @@
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年04月18日 16:13</p>
+        <p>最后更新： 2018年04月18日 16:15</p>
         <p>原始链接： <a class="post-url" href="/yangblog/2018/04/18/lombok插件安装/" title="">amosewarrior.github.io/2018/04/18/lombok插件安装/</a></p>
         <footer>
             <a href="amosewarrior.github.io">
