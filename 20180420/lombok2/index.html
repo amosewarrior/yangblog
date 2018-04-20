@@ -19,7 +19,7 @@
 <meta property="og:image" content="amosewarrior.github.io/img/lombok/2/1.png">
 <meta property="og:image" content="amosewarrior.github.io/img/lombok/2/2.png">
 <meta property="og:image" content="amosewarrior.github.io/img/lombok/2/3.png">
-<meta property="og:updated_time" content="2018-04-20T07:04:52.119Z">
+<meta property="og:updated_time" content="2018-04-20T07:07:25.289Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lombok之注解使用">
 <meta name="twitter:description" content="一.lombok对象与注解&amp;emsp;&amp;emsp;lombok 通过注解和定义对象来简化代码的书写.比如val 用于定义局部finnal变量.var 用于定义局部动态变量.@NonNull 进行非空判断. 二.demo的依赖包&amp;emsp;&amp;emsp;使用lombok时除了要使用lombok插件外还需要添加lombok的依赖 12345&amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;">
@@ -152,7 +152,7 @@
             
             <h3 id="一-lombok对象与注解"><a href="#一-lombok对象与注解" class="headerlink" title="一.lombok对象与注解"></a>一.lombok对象与注解</h3><p>&emsp;&emsp;lombok 通过注解和定义对象来简化代码的书写.比如val 用于定义局部finnal变量.var 用于定义局部动态变量.@NonNull 进行非空判断.</p>
 <h3 id="二-demo的依赖包"><a href="#二-demo的依赖包" class="headerlink" title="二.demo的依赖包"></a>二.demo的依赖包</h3><p>&emsp;&emsp;使用lombok时除了要使用lombok插件外还需要添加lombok的依赖</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.16.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;lombok&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.16.12&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="三-val-局部finally变量"><a href="#三-val-局部finally变量" class="headerlink" title="三.val 局部finally变量"></a>三.val 局部finally变量</h3><p>&emsp;&emsp; 利用val替代实际final变量的声明,让lombok自动根据赋值表达式来替换val.替换的好处就是不需要自己判定赋值表达式返回的数据类型,当然源代码长度也缩减了. lombok的目的也就是为了减少冗余代码.</p>
 <pre><code>import lombok.val;
 import java.util.ArrayList;
@@ -243,7 +243,7 @@ public class Something {
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年04月20日 15:04</p>
+        <p>最后更新： 2018年04月20日 15:07</p>
         <p>原始链接： <a class="post-url" href="/yangblog/20180420/lombok2/" title="lombok之注解使用">amosewarrior.github.io/20180420/lombok2/</a></p>
         <footer>
             <a href="amosewarrior.github.io">
