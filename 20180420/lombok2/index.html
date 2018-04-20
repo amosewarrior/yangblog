@@ -19,7 +19,7 @@
 <meta property="og:image" content="amosewarrior.github.io/img/lombok/2/1.png">
 <meta property="og:image" content="amosewarrior.github.io/img/lombok/2/2.png">
 <meta property="og:image" content="amosewarrior.github.io/img/lombok/2/3.png">
-<meta property="og:updated_time" content="2018-04-20T07:07:25.289Z">
+<meta property="og:updated_time" content="2018-04-20T07:12:15.584Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lombok之注解使用">
 <meta name="twitter:description" content="一.lombok对象与注解&amp;emsp;&amp;emsp;lombok 通过注解和定义对象来简化代码的书写.比如val 用于定义局部finnal变量.var 用于定义局部动态变量.@NonNull 进行非空判断. 二.demo的依赖包&amp;emsp;&amp;emsp;使用lombok时除了要使用lombok插件外还需要添加lombok的依赖 12345&amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;">
@@ -152,98 +152,21 @@
             
             <h3 id="一-lombok对象与注解"><a href="#一-lombok对象与注解" class="headerlink" title="一.lombok对象与注解"></a>一.lombok对象与注解</h3><p>&emsp;&emsp;lombok 通过注解和定义对象来简化代码的书写.比如val 用于定义局部finnal变量.var 用于定义局部动态变量.@NonNull 进行非空判断.</p>
 <h3 id="二-demo的依赖包"><a href="#二-demo的依赖包" class="headerlink" title="二.demo的依赖包"></a>二.demo的依赖包</h3><p>&emsp;&emsp;使用lombok时除了要使用lombok插件外还需要添加lombok的依赖</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;lombok&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.16.12&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="三-val-局部finally变量"><a href="#三-val-局部finally变量" class="headerlink" title="三.val 局部finally变量"></a>三.val 局部finally变量</h3><p>&emsp;&emsp; 利用val替代实际final变量的声明,让lombok自动根据赋值表达式来替换val.替换的好处就是不需要自己判定赋值表达式返回的数据类型,当然源代码长度也缩减了. lombok的目的也就是为了减少冗余代码.</p>
-<pre><code>import lombok.val;
-import java.util.ArrayList;
-/**
- * @author yp
- * @time 2018/4/13
- * @description  可以用val替代局部final变量的实际声明.由val代替的声明
- */
-public class TestVal {
-    public static void main(String[] args){
-        val list = new ArrayList&lt;String&gt;();
-        //等同于ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();
-        list.add(&quot;0&quot;);
-        list.add(&quot;1&quot;);
-        System.out.println(list.get(0));
-        list = new ArrayList&lt;String&gt;();
-    }
-}
-</code></pre><p><img src="../../img/lombok/2/1.png" alt=""></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.16.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="三-val-局部finally变量"><a href="#三-val-局部finally变量" class="headerlink" title="三.val 局部finally变量"></a>三.val 局部finally变量</h3><p>&emsp;&emsp; 利用val替代实际final变量的声明,让lombok自动根据赋值表达式来替换val.替换的好处就是不需要自己判定赋值表达式返回的数据类型,当然源代码长度也缩减了. lombok的目的也就是为了减少冗余代码.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> lombok.val;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> yp</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@time</span> 2018/4/13</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>  可以用val替代局部final变量的实际声明.由val代替的声明</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestVal</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        val list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">		<span class="comment">//等同于ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();</span></span><br><span class="line">        list.add(<span class="string">"0"</span>);</span><br><span class="line">        list.add(<span class="string">"1"</span>);</span><br><span class="line">        System.out.println(list.get(<span class="number">0</span>));</span><br><span class="line">        list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="../../img/lombok/2/1.png" alt=""></p>
 <h3 id="四-var-局部变量"><a href="#四-var-局部变量" class="headerlink" title="四.var 局部变量"></a>四.var 局部变量</h3><p>&emsp;&emsp; var这个对象其实目前还处于实验阶段,所以在使用var时需要注意,需要现在lombok.config中声明:</p>
 <pre><code>lombok.var.flagUsage = ALLOW         
-</code></pre><p>&emsp;&emsp; 这样lombok插件才会去读取由var标注的变量,并进行转换.</p>
-<pre><code>import lombok.experimental.var;
-import java.util.ArrayList;
-/**
- * @author yp
- * @time 2018/4/16
- * @description
- */
-public class TestVar {
-    public static void main(String[] args){
-        var s = new ArrayList&lt;String&gt;();
-        s.add(&quot;aaa&quot;);
-        s.add(&quot;bbb&quot;);
-        System.out.println(&quot;==&gt;&quot;+s.get(0));
-        s = new ArrayList&lt;String&gt;();
-        s.add(&quot;cccc&quot;);
-        System.out.println(&quot;==&gt;&quot;+s.get(0));
-    }
-}
-</code></pre><p>&emsp;&emsp; 这里需要注意的是,请将lombok.config放在src下,而不是resources下,编译优于合并.</p>
-<h3 id="五-NonNull-注解"><a href="#五-NonNull-注解" class="headerlink" title="五.@NonNull 注解"></a>五.@NonNull 注解</h3><p>&emsp;&emsp; 在构造方法或者放入入参时,在所有方法体代码内的顶层进行对参数进行null判断(但是,super()和this()会比它先执行).<br>    import lombok.NonNull;</p>
-<pre><code>/**
- * @author yp
- * @time 2018/4/20
- * @description
- */
-public class TestNonNull extends Something{
-
-    public TestNonNull(@NonNull String s) {
-        super(&quot;Hello1&quot;);
-        System.out.println(s);
-    }
-
-    private TestNonNull(Integer s) {
-        super(&quot;Hello2&quot;);
-        if(s == null){
-            throw new NullPointerException(&quot;normal&quot;);
-        }
-        System.out.println(s);
-    }
-
-    public static void main(String[] args){
-        String s = null;
-        TestNonNull t1 = new TestNonNull(s);
-        Integer a = null;
-        TestNonNull t2 = new TestNonNull(a);
-    }
-}
-
-/**
- * @author yp
- * @time 2018/4/20
- * @description
- */
-public class Something {
-    public Something(String s){
-        System.out.println(s);
-    }
-
-    public Something(Integer s){
-        System.out.println(s);
-    }
-}
-</code></pre><p><img src="../../img/lombok/2/2.png" alt=""><br><img src="../../img/lombok/2/3.png" alt=""></p>
+</code></pre><p>&emsp;&emsp; 这样lombok插件才会去读取由var标注的变量,并进行转换.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> lombok.experimental.var;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> yp</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@time</span> 2018/4/16</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestVar</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        var s = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        s.add(<span class="string">"aaa"</span>);</span><br><span class="line">        s.add(<span class="string">"bbb"</span>);</span><br><span class="line">        System.out.println(<span class="string">"==&gt;"</span>+s.get(<span class="number">0</span>));</span><br><span class="line">        s = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        s.add(<span class="string">"cccc"</span>);</span><br><span class="line">        System.out.println(<span class="string">"==&gt;"</span>+s.get(<span class="number">0</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp; 这里需要注意的是,请将lombok.config放在src下,而不是resources下,编译优于合并.</p>
+<h3 id="五-NonNull-注解"><a href="#五-NonNull-注解" class="headerlink" title="五.@NonNull 注解"></a>五.@NonNull 注解</h3><p>&emsp;&emsp; 在构造方法或者放入入参时,在所有方法体代码内的顶层进行对参数进行null判断(但是,super()和this()会比它先执行).<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> lombok.NonNull;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> yp</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@time</span> 2018/4/20</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestNonNull</span> <span class="keyword">extends</span> <span class="title">Something</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TestNonNull</span><span class="params">(@NonNull String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(<span class="string">"Hello1"</span>);</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">TestNonNull</span><span class="params">(Integer s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(<span class="string">"Hello2"</span>);</span><br><span class="line">        <span class="keyword">if</span>(s == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException(<span class="string">"normal"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        String s = <span class="keyword">null</span>;</span><br><span class="line">        TestNonNull t1 = <span class="keyword">new</span> TestNonNull(s);</span><br><span class="line">        Integer a = <span class="keyword">null</span>;</span><br><span class="line">        TestNonNull t2 = <span class="keyword">new</span> TestNonNull(a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> yp</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@time</span> 2018/4/20</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Something</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Something</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Something</span><span class="params">(Integer s)</span></span>&#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="../../img/lombok/2/2.png" alt=""><br><img src="../../img/lombok/2/3.png" alt=""></p>
 <p>从代码和上图可以看出,@NonNull 是在构造方法的super()方法之后进行null检查的,跟if(s == null)效果一致</p>
 <h3 id="五-总结"><a href="#五-总结" class="headerlink" title="五.总结"></a>五.总结</h3><p>&emsp;&emsp;看着挺简单的东西,在真正去实践的时候你才会发现事实永远不会像我们想象的那么简单.<br>谨记墨菲定律：<br>一、任何事都没有表面看起来那么简单；<br>二、所有的事都会比你预计的时间长；<br>三、会出错的事总会出错；<br>四、如果你担心某种情况发生，那么它就更有可能发生</p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年04月20日 15:07</p>
+        <p>最后更新： 2018年04月20日 15:12</p>
         <p>原始链接： <a class="post-url" href="/yangblog/20180420/lombok2/" title="lombok之注解使用">amosewarrior.github.io/20180420/lombok2/</a></p>
         <footer>
             <a href="amosewarrior.github.io">
@@ -370,9 +293,19 @@ public class Something {
 
 <nav id="article-nav">
   
+    <a href="/yangblog/20180420/lombok1/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          lombok之插件安装(idea版)
+        
+      </span>
+    </a>
   
-    <a href="/yangblog/20180420/lombok1/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">lombok之插件安装(idea版)</span>
+  
+    <a href="/yangblog/20180418/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Hello World</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
