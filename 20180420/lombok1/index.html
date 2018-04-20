@@ -18,7 +18,9 @@
 <meta property="og:locale" content="Chinese">
 <meta property="og:image" content="amosewarrior.github.io/img/lombok/1/1.png">
 <meta property="og:image" content="amosewarrior.github.io/img/lombok/1/2.png">
-<meta property="og:updated_time" content="2018-04-20T03:40:15.572Z">
+<meta property="og:image" content="amosewarrior.github.io/img/lombok/1/3.png">
+<meta property="og:image" content="amosewarrior.github.io/img/lombok/1/3.png">
+<meta property="og:updated_time" content="2018-04-20T04:02:14.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lombok之插件安装(idea版)">
 <meta name="twitter:description" content="一.主题简介&amp;emsp;&amp;emsp;lombok是一个通过注解来减少模板代码的插件,其作用于编译期,网上都是这么说的:就是源代码在编译成字节码的时候修改了语法树的节点规则进行了加强生成.在我的理解就是在编译的时候将被注解的地方生成对应注解的模板代码.就跟代码生成器一样,只不过lombok生成的是字节码,我们生成的是java源码.介绍到这,我们开始安装~ 二.安装插件&amp;emsp;&amp;emsp;找到配置">
@@ -151,10 +153,13 @@
             
             <h3 id="一-主题简介"><a href="#一-主题简介" class="headerlink" title="一.主题简介"></a>一.主题简介</h3><p>&emsp;&emsp;lombok是一个通过注解来减少模板代码的插件,其作用于编译期,网上都是这么说的:就是源代码在编译成字节码的时候修改了语法树的节点规则进行了加强生成.在我的理解就是在编译的时候将被注解的地方生成对应注解的模板代码.就跟代码生成器一样,只不过lombok生成的是字节码,我们生成的是java源码.介绍到这,我们开始安装~</p>
 <h3 id="二-安装插件"><a href="#二-安装插件" class="headerlink" title="二.安装插件"></a>二.安装插件</h3><p>&emsp;&emsp;找到配置下的插件管理器,点击插件仓库搜索lombok进行安装:File-&gt;Settings-&gt;Plugins<br><img src="../../img/lombok/1/1.png" alt=""><br><img src="../../img/lombok/1/2.png" alt=""></p>
-<h3 id="三-配置"><a href="#三-配置" class="headerlink" title="三.配置"></a>三.配置</h3><h3 id="四-踩坑检测"><a href="#四-踩坑检测" class="headerlink" title="四.踩坑检测"></a>四.踩坑检测</h3>
+<h3 id="三-配置"><a href="#三-配置" class="headerlink" title="三.配置"></a>三.配置</h3><p>&emsp;&emsp;配置编译器的属性,勾选使用注解处理,然后重启idea.File-&gt;Settings-&gt;Build-&gt;Compiler<br>-&gt;Annotation Processors<br><img src="../../img/lombok/1/3.png" alt=""></p>
+<h3 id="四-踩坑检测"><a href="#四-踩坑检测" class="headerlink" title="四.踩坑检测"></a>四.踩坑检测</h3><p>&emsp;&emsp;在安装插件的时候踩了两个坑.<br>坑1:编译器使用的Eclipse,导致lombok插件无法使用.改成javac,并去掉使用模块的jdk选项<br><img src="../../img/lombok/1/3.png" alt=""><br>坑2:若要使用lombok.config配置参数.请不要放在resources文件夹下,放在src包下,不然编译无法时是读取不到的.</p>
+<h3 id="五-总结"><a href="#五-总结" class="headerlink" title="五.总结"></a>五.总结</h3><p>&emsp;&emsp;看着挺简单的东西,在真正去实践的时候你才会发现事实永远不会像我们想象的那么简单.<br>谨记墨菲定律：<br>一、任何事都没有表面看起来那么简单；<br>二、所有的事都会比你预计的时间长；<br>三、会出错的事总会出错；<br>四、如果你担心某种情况发生，那么它就更有可能发生</p>
+
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年04月20日 11:40</p>
+        <p>最后更新： 2018年04月20日 12:02</p>
         <p>原始链接： <a class="post-url" href="/yangblog/20180420/lombok1/" title="lombok之插件安装(idea版)">amosewarrior.github.io/20180420/lombok1/</a></p>
         <footer>
             <a href="amosewarrior.github.io">
@@ -274,7 +279,7 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-主题简介"><span class="post-toc-text">一.主题简介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-安装插件"><span class="post-toc-text">二.安装插件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三-配置"><span class="post-toc-text">三.配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四-踩坑检测"><span class="post-toc-text">四.踩坑检测</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-主题简介"><span class="post-toc-text">一.主题简介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-安装插件"><span class="post-toc-text">二.安装插件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三-配置"><span class="post-toc-text">三.配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四-踩坑检测"><span class="post-toc-text">四.踩坑检测</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五-总结"><span class="post-toc-text">五.总结</span></a></li></ol>
         </nav>
     </aside>
     
