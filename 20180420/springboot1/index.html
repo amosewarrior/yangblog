@@ -3,28 +3,25 @@
 <head>
   <meta charset="utf-8">
   
-  <title>lombok之插件安装(idea版) | Yang&#39;s Blog</title>
+  <title>SpringBoot之SocialConfigurerAdapter.class cannot be opened because it does not exist | Yang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Amose's Blog" />
   
-  <meta name="description" content="一.主题简介&amp;emsp;&amp;emsp;lombok是一个通过注解来减少模板代码的插件,其作用于编译期,网上都是这么说的:就是源代码在编译成字节码的时候修改了语法树的节点规则进行了加强生成.在我的理解就是在编译的时候将被注解的地方生成对应注解的模板代码.就跟代码生成器一样,只不过lombok生成的是字节码,我们生成的是java源码.介绍到这,我们开始安装~ 二.安装插件&amp;emsp;&amp;emsp;找到配置">
-<meta name="keywords" content="java,lombok">
+  <meta name="description" content="&amp;emsp;&amp;emsp;用maven搭建了一个springboot的小demo,然后在启动是报如下错误:1234567891011121314151617Caused by: java.io.FileNotFoundException: class path resource [org/springframework/social/config/annotation/SocialConfigure">
+<meta name="keywords" content="java,SpringBoot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="lombok之插件安装(idea版)">
-<meta property="og:url" content="amosewarrior.github.io/20180420/lombok1/index.html">
+<meta property="og:title" content="SpringBoot之SocialConfigurerAdapter.class cannot be opened because it does not exist">
+<meta property="og:url" content="amosewarrior.github.io/20180420/springboot1/index.html">
 <meta property="og:site_name" content="Yang&#39;s Blog">
-<meta property="og:description" content="一.主题简介&amp;emsp;&amp;emsp;lombok是一个通过注解来减少模板代码的插件,其作用于编译期,网上都是这么说的:就是源代码在编译成字节码的时候修改了语法树的节点规则进行了加强生成.在我的理解就是在编译的时候将被注解的地方生成对应注解的模板代码.就跟代码生成器一样,只不过lombok生成的是字节码,我们生成的是java源码.介绍到这,我们开始安装~ 二.安装插件&amp;emsp;&amp;emsp;找到配置">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;用maven搭建了一个springboot的小demo,然后在启动是报如下错误:1234567891011121314151617Caused by: java.io.FileNotFoundException: class path resource [org/springframework/social/config/annotation/SocialConfigure">
 <meta property="og:locale" content="Chinese">
-<meta property="og:image" content="amosewarrior.github.io/img/lombok/1/1.png">
-<meta property="og:image" content="amosewarrior.github.io/img/lombok/1/2.png">
-<meta property="og:image" content="amosewarrior.github.io/img/lombok/1/3.png">
-<meta property="og:image" content="amosewarrior.github.io/img/lombok/1/3.png">
-<meta property="og:updated_time" content="2018-04-20T04:02:14.227Z">
+<meta property="og:image" content="amosewarrior.github.io/img/springboot/1/1.png">
+<meta property="og:updated_time" content="2018-04-24T08:48:08.961Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lombok之插件安装(idea版)">
-<meta name="twitter:description" content="一.主题简介&amp;emsp;&amp;emsp;lombok是一个通过注解来减少模板代码的插件,其作用于编译期,网上都是这么说的:就是源代码在编译成字节码的时候修改了语法树的节点规则进行了加强生成.在我的理解就是在编译的时候将被注解的地方生成对应注解的模板代码.就跟代码生成器一样,只不过lombok生成的是字节码,我们生成的是java源码.介绍到这,我们开始安装~ 二.安装插件&amp;emsp;&amp;emsp;找到配置">
-<meta name="twitter:image" content="amosewarrior.github.io/img/lombok/1/1.png">
+<meta name="twitter:title" content="SpringBoot之SocialConfigurerAdapter.class cannot be opened because it does not exist">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;用maven搭建了一个springboot的小demo,然后在启动是报如下错误:1234567891011121314151617Caused by: java.io.FileNotFoundException: class path resource [org/springframework/social/config/annotation/SocialConfigure">
+<meta name="twitter:image" content="amosewarrior.github.io/img/springboot/1/1.png">
   
   
     <link rel="icon" href="/yangblog//favicon.ico">
@@ -115,14 +112,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-lombok1" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-springboot1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      lombok之插件安装(idea版)
+      SpringBoot之SocialConfigurerAdapter.class cannot be opened because it does not exist
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -130,7 +127,7 @@
               <li>
                   <i class="fa fa-book"></i>
                   
-                      <a href="/yangblog/categories/lombok/">lombok</a>
+                      <a href="/yangblog/categories/SpringBoot/">SpringBoot</a>
                   
               </li>
           
@@ -151,16 +148,14 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h3 id="一-主题简介"><a href="#一-主题简介" class="headerlink" title="一.主题简介"></a>一.主题简介</h3><p>&emsp;&emsp;lombok是一个通过注解来减少模板代码的插件,其作用于编译期,网上都是这么说的:就是源代码在编译成字节码的时候修改了语法树的节点规则进行了加强生成.在我的理解就是在编译的时候将被注解的地方生成对应注解的模板代码.就跟代码生成器一样,只不过lombok生成的是字节码,我们生成的是java源码.介绍到这,我们开始安装~</p>
-<h3 id="二-安装插件"><a href="#二-安装插件" class="headerlink" title="二.安装插件"></a>二.安装插件</h3><p>&emsp;&emsp;找到配置下的插件管理器,点击插件仓库搜索lombok进行安装:File-&gt;Settings-&gt;Plugins<br><img src="../../img/lombok/1/1.png" alt=""><br><img src="../../img/lombok/1/2.png" alt=""></p>
-<h3 id="三-配置"><a href="#三-配置" class="headerlink" title="三.配置"></a>三.配置</h3><p>&emsp;&emsp;配置编译器的属性,勾选使用注解处理,然后重启idea.File-&gt;Settings-&gt;Build-&gt;Compiler<br>-&gt;Annotation Processors<br><img src="../../img/lombok/1/3.png" alt=""></p>
-<h3 id="四-踩坑检测"><a href="#四-踩坑检测" class="headerlink" title="四.踩坑检测"></a>四.踩坑检测</h3><p>&emsp;&emsp;在安装插件的时候踩了两个坑.<br>坑1:编译器使用的Eclipse,导致lombok插件无法使用.改成javac,并去掉使用模块的jdk选项<br><img src="../../img/lombok/1/3.png" alt=""><br>坑2:若要使用lombok.config配置参数.请不要放在resources文件夹下,放在src包下,不然编译无法时是读取不到的.</p>
-<h3 id="五-总结"><a href="#五-总结" class="headerlink" title="五.总结"></a>五.总结</h3><p>&emsp;&emsp;看着挺简单的东西,在真正去实践的时候你才会发现事实永远不会像我们想象的那么简单.<br>谨记墨菲定律：<br>一、任何事都没有表面看起来那么简单；<br>二、所有的事都会比你预计的时间长；<br>三、会出错的事总会出错；<br>四、如果你担心某种情况发生，那么它就更有可能发生</p>
+            <p>&emsp;&emsp;用maven搭建了一个springboot的小demo,然后在启动是报如下错误:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.io.FileNotFoundException: class path resource [org/springframework/social/config/annotation/SocialConfigurerAdapter.class] cannot be opened because it does not exist</span><br><span class="line">	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172) ~[spring-core-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.core.type.classreading.SimpleMetadataReader.&lt;init&gt;(SimpleMetadataReader.java:50) ~[spring-core-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:98) ~[spring-core-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.createMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:89) ~[spring-boot-1.5.3.RELEASE.jar:1.5.3.RELEASE]</span><br><span class="line">	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.getMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:76) ~[spring-boot-1.5.3.RELEASE.jar:1.5.3.RELEASE]</span><br><span class="line">	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:93) ~[spring-core-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.context.annotation.ConfigurationClassParser.asSourceClass(ConfigurationClassParser.java:693) ~[spring-context-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.context.annotation.ConfigurationClassParser$SourceClass.getSuperClass(ConfigurationClassParser.java:857) ~[spring-context-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:328) ~[spring-context-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:245) ~[spring-context-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:190) ~[spring-context-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:292) ~[spring-context-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:245) ~[spring-context-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:198) ~[spring-context-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167) ~[spring-context-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	... 13 common frames omitted</span><br></pre></td></tr></table></figure></p>
+<p>找了半天,发现前面有个警告.<br><img src="../../img/springboot/1/1.png" alt=""></p>
+<p>发现是启动类不应该放在在顶级包下.然后加了个包就行了.</p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年04月20日 12:02</p>
-        <p>原始链接： <a class="post-url" href="/yangblog/20180420/lombok1/" title="lombok之插件安装(idea版)">amosewarrior.github.io/20180420/lombok1/</a></p>
+        <p>最后更新： 2018年04月24日 16:48</p>
+        <p>原始链接： <a class="post-url" href="/yangblog/20180420/springboot1/" title="SpringBoot之SocialConfigurerAdapter.class cannot be opened because it does not exist">amosewarrior.github.io/20180420/springboot1/</a></p>
         <footer>
             <a href="amosewarrior.github.io">
                 <img src="/yangblog/images/logo.png" alt="Amose  Yang">
@@ -217,7 +212,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=amosewarrior.github.io/20180420/lombok1/&title=《lombok之插件安装(idea版)》 — Yang's Blog&pic=/img/lombok/cover.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=amosewarrior.github.io/20180420/springboot1/&title=《SpringBoot之SocialConfigurerAdapter.class cannot be opened because it does not exist》 — Yang's Blog&pic=/img/springboot/cover.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -227,22 +222,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=amosewarrior.github.io/20180420/lombok1/&title=《lombok之插件安装(idea版)》 — Yang's Blog&source=read,think,share" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=amosewarrior.github.io/20180420/springboot1/&title=《SpringBoot之SocialConfigurerAdapter.class cannot be opened because it does not exist》 — Yang's Blog&source=read,think,share" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=amosewarrior.github.io/20180420/lombok1/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=amosewarrior.github.io/20180420/springboot1/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《lombok之插件安装(idea版)》 — Yang's Blog&url=amosewarrior.github.io/20180420/lombok1/&via=amosewarrior.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《SpringBoot之SocialConfigurerAdapter.class cannot be opened because it does not exist》 — Yang's Blog&url=amosewarrior.github.io/20180420/springboot1/&via=amosewarrior.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=amosewarrior.github.io/20180420/lombok1/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=amosewarrior.github.io/20180420/springboot1/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -252,7 +247,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=amosewarrior.github.io/20180420/lombok1/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=amosewarrior.github.io/20180420/springboot1/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -266,7 +261,7 @@
       
     <a href="/yangblog/tags/java/" class="color5">java</a>
       
-    <a href="/yangblog/tags/lombok/" class="color2">lombok</a>
+    <a href="/yangblog/tags/SpringBoot/" class="color1">SpringBoot</a>
       
   </li>
 
@@ -277,28 +272,12 @@
 </article>
 
 
-    <aside class="post-toc-pos post-toc-top" id="post-toc">
-        <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-主题简介"><span class="post-toc-text">一.主题简介</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-安装插件"><span class="post-toc-text">二.安装插件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三-配置"><span class="post-toc-text">三.配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四-踩坑检测"><span class="post-toc-text">四.踩坑检测</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五-总结"><span class="post-toc-text">五.总结</span></a></li></ol>
-        </nav>
-    </aside>
-    
 
 <nav id="article-nav">
   
-    <a href="/yangblog/20180420/springboot1/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          SpringBoot之SocialConfigurerAdapter.class cannot be opened because it does not exist
-        
-      </span>
-    </a>
   
-  
-    <a href="/yangblog/20180420/lombok2/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">lombok之注解使用</span>
+    <a href="/yangblog/20180420/lombok1/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">lombok之插件安装(idea版)</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
