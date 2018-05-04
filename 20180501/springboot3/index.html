@@ -3,25 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>SpringBoot之SocialConfigurerAdapter.class cannot be opened because it does not exist | Yang&#39;s Blog</title>
+  <title>SpringBoot之Unsupported major.minor version 52.0(idea版) | Yang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Amose's Blog" />
   
-  <meta name="description" content="&amp;emsp;&amp;emsp;用maven搭建了一个springboot的小demo,然后在启动是报如下错误:1234567891011121314151617Caused by: java.io.FileNotFoundException: class path resource [org/springframework/social/config/annotation/SocialConfigure">
+  <meta name="description" content="&amp;emsp;&amp;emsp;在进行springboot demo启动时,出现了Unsupported major.minor version 52.0 的错误.这是因为springboot的需求版本跟java的目标版本不一致.共需要修改两个地方.">
 <meta name="keywords" content="java,SpringBoot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot之SocialConfigurerAdapter.class cannot be opened because it does not exist">
-<meta property="og:url" content="amosewarrior.github.io/20180420/springboot1/index.html">
+<meta property="og:title" content="SpringBoot之Unsupported major.minor version 52.0(idea版)">
+<meta property="og:url" content="amosewarrior.github.io/20180501/springboot3/index.html">
 <meta property="og:site_name" content="Yang&#39;s Blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;用maven搭建了一个springboot的小demo,然后在启动是报如下错误:1234567891011121314151617Caused by: java.io.FileNotFoundException: class path resource [org/springframework/social/config/annotation/SocialConfigure">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;在进行springboot demo启动时,出现了Unsupported major.minor version 52.0 的错误.这是因为springboot的需求版本跟java的目标版本不一致.共需要修改两个地方.">
 <meta property="og:locale" content="Chinese">
-<meta property="og:image" content="amosewarrior.github.io/img/springboot/1/1.png">
-<meta property="og:updated_time" content="2018-05-04T04:03:06.811Z">
+<meta property="og:image" content="amosewarrior.github.io/img/springboot/3/1.png">
+<meta property="og:image" content="amosewarrior.github.io/img/springboot/3/2.png">
+<meta property="og:updated_time" content="2018-05-04T04:07:22.282Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringBoot之SocialConfigurerAdapter.class cannot be opened because it does not exist">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;用maven搭建了一个springboot的小demo,然后在启动是报如下错误:1234567891011121314151617Caused by: java.io.FileNotFoundException: class path resource [org/springframework/social/config/annotation/SocialConfigure">
-<meta name="twitter:image" content="amosewarrior.github.io/img/springboot/1/1.png">
+<meta name="twitter:title" content="SpringBoot之Unsupported major.minor version 52.0(idea版)">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;在进行springboot demo启动时,出现了Unsupported major.minor version 52.0 的错误.这是因为springboot的需求版本跟java的目标版本不一致.共需要修改两个地方.">
+<meta name="twitter:image" content="amosewarrior.github.io/img/springboot/3/1.png">
   
   
     <link rel="icon" href="/yangblog//favicon.ico">
@@ -112,14 +113,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-springboot1" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-springboot3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      SpringBoot之SocialConfigurerAdapter.class cannot be opened because it does not exist
+      SpringBoot之Unsupported major.minor version 52.0(idea版)
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -132,7 +133,7 @@
               </li>
           
         <li>
-          <i class="fa fa-calendar"></i>  2018-04-20
+          <i class="fa fa-calendar"></i>  2018-05-01
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -148,14 +149,12 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>&emsp;&emsp;用maven搭建了一个springboot的小demo,然后在启动是报如下错误:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.io.FileNotFoundException: class path resource [org/springframework/social/config/annotation/SocialConfigurerAdapter.class] cannot be opened because it does not exist</span><br><span class="line">	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172) ~[spring-core-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.core.type.classreading.SimpleMetadataReader.&lt;init&gt;(SimpleMetadataReader.java:50) ~[spring-core-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:98) ~[spring-core-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.createMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:89) ~[spring-boot-1.5.3.RELEASE.jar:1.5.3.RELEASE]</span><br><span class="line">	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.getMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:76) ~[spring-boot-1.5.3.RELEASE.jar:1.5.3.RELEASE]</span><br><span class="line">	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:93) ~[spring-core-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.context.annotation.ConfigurationClassParser.asSourceClass(ConfigurationClassParser.java:693) ~[spring-context-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.context.annotation.ConfigurationClassParser$SourceClass.getSuperClass(ConfigurationClassParser.java:857) ~[spring-context-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:328) ~[spring-context-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:245) ~[spring-context-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:190) ~[spring-context-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:292) ~[spring-context-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:245) ~[spring-context-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:198) ~[spring-context-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167) ~[spring-context-4.3.8.RELEASE.jar:4.3.8.RELEASE]</span><br><span class="line">	... 13 common frames omitted</span><br></pre></td></tr></table></figure></p>
-<p>找了半天,发现前面有个警告.<br><img src="../../img/springboot/1/1.png" alt=""></p>
-<p>发现是启动类不应该放在在顶级包下.然后加了个包就行了.</p>
+            <p>&emsp;&emsp;在进行springboot demo启动时,出现了Unsupported major.minor version 52.0 的错误.这是因为springboot的需求版本跟java的目标版本不一致.<br>共需要修改两个地方.<br><img src="../../img/springboot/3/1.png" alt=""><br><img src="../../img/springboot/3/2.png" alt=""></p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年05月04日 12:03</p>
-        <p>原始链接： <a class="post-url" href="/yangblog/20180420/springboot1/" title="SpringBoot之SocialConfigurerAdapter.class cannot be opened because it does not exist">amosewarrior.github.io/20180420/springboot1/</a></p>
+        <p>最后更新： 2018年05月04日 12:07</p>
+        <p>原始链接： <a class="post-url" href="/yangblog/20180501/springboot3/" title="SpringBoot之Unsupported major.minor version 52.0(idea版)">amosewarrior.github.io/20180501/springboot3/</a></p>
         <footer>
             <a href="amosewarrior.github.io">
                 <img src="/yangblog/images/logo.png" alt="Amose  Yang">
@@ -212,7 +211,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=amosewarrior.github.io/20180420/springboot1/&title=《SpringBoot之SocialConfigurerAdapter.class cannot be opened because it does not exist》 — Yang's Blog&pic=/img/springboot/cover.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=amosewarrior.github.io/20180501/springboot3/&title=《SpringBoot之Unsupported major.minor version 52.0(idea版)》 — Yang's Blog&pic=/img/springboot/cover.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -222,22 +221,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=amosewarrior.github.io/20180420/springboot1/&title=《SpringBoot之SocialConfigurerAdapter.class cannot be opened because it does not exist》 — Yang's Blog&source=read,think,share" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=amosewarrior.github.io/20180501/springboot3/&title=《SpringBoot之Unsupported major.minor version 52.0(idea版)》 — Yang's Blog&source=read,think,share" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=amosewarrior.github.io/20180420/springboot1/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=amosewarrior.github.io/20180501/springboot3/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《SpringBoot之SocialConfigurerAdapter.class cannot be opened because it does not exist》 — Yang's Blog&url=amosewarrior.github.io/20180420/springboot1/&via=amosewarrior.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《SpringBoot之Unsupported major.minor version 52.0(idea版)》 — Yang's Blog&url=amosewarrior.github.io/20180501/springboot3/&via=amosewarrior.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=amosewarrior.github.io/20180420/springboot1/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=amosewarrior.github.io/20180501/springboot3/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -247,7 +246,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=amosewarrior.github.io/20180420/springboot1/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=amosewarrior.github.io/20180501/springboot3/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -275,19 +274,9 @@
 
 <nav id="article-nav">
   
-    <a href="/yangblog/20180420/springboot2/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          SpringBoot之Restful Web Service
-        
-      </span>
-    </a>
   
-  
-    <a href="/yangblog/20180420/springboot3/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">SpringBoot之Unsupported major.minor version 52.0(idea版)</span>
+    <a href="/yangblog/20180428/springboot2/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">SpringBoot之Restful Web Service</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
