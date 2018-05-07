@@ -8,18 +8,18 @@
   
     <meta name="keywords" content="Amose's Blog" />
   
-  <meta name="description" content="&amp;emsp;&amp;emsp;Cron表达式在quartz和spring定时任务中都有使用到,用来设置任务执行时间执行间隔. 一.结构:&amp;emsp;&amp;emsp;cron表达式的结构如下:1corn从左到右（用空格隔开）：秒 分 小时 月份中的日期 月份 星期中的日期 年份 二.各字段的含义   字段 允许值 允许特殊字符     秒（Seconds） 0~59的整数 , - * /    四个字符">
+  <meta name="description" content="文章转载于cron表达式详解&amp;emsp;&amp;emsp;Cron表达式在quartz和spring定时任务中都有使用到,用来设置任务执行时间执行间隔.  一.结构:&amp;emsp;&amp;emsp;cron表达式的结构如下:1corn从左到右（用空格隔开）：秒 分 小时 月份中的日期 月份 星期中的日期 年份 二.各字段的含义   字段 允许值 允许特殊字符     秒（Seconds） 0~59的整数 ,">
 <meta name="keywords" content="java,SpringBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot之Cron表达式">
 <meta property="og:url" content="amosewarrior.github.io/20180507/springboot5/index.html">
 <meta property="og:site_name" content="Yang&#39;s Blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;Cron表达式在quartz和spring定时任务中都有使用到,用来设置任务执行时间执行间隔. 一.结构:&amp;emsp;&amp;emsp;cron表达式的结构如下:1corn从左到右（用空格隔开）：秒 分 小时 月份中的日期 月份 星期中的日期 年份 二.各字段的含义   字段 允许值 允许特殊字符     秒（Seconds） 0~59的整数 , - * /    四个字符">
+<meta property="og:description" content="文章转载于cron表达式详解&amp;emsp;&amp;emsp;Cron表达式在quartz和spring定时任务中都有使用到,用来设置任务执行时间执行间隔.  一.结构:&amp;emsp;&amp;emsp;cron表达式的结构如下:1corn从左到右（用空格隔开）：秒 分 小时 月份中的日期 月份 星期中的日期 年份 二.各字段的含义   字段 允许值 允许特殊字符     秒（Seconds） 0~59的整数 ,">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2018-05-07T06:50:04.502Z">
+<meta property="og:updated_time" content="2018-05-07T08:20:40.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot之Cron表达式">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;Cron表达式在quartz和spring定时任务中都有使用到,用来设置任务执行时间执行间隔. 一.结构:&amp;emsp;&amp;emsp;cron表达式的结构如下:1corn从左到右（用空格隔开）：秒 分 小时 月份中的日期 月份 星期中的日期 年份 二.各字段的含义   字段 允许值 允许特殊字符     秒（Seconds） 0~59的整数 , - * /    四个字符">
+<meta name="twitter:description" content="文章转载于cron表达式详解&amp;emsp;&amp;emsp;Cron表达式在quartz和spring定时任务中都有使用到,用来设置任务执行时间执行间隔.  一.结构:&amp;emsp;&amp;emsp;cron表达式的结构如下:1corn从左到右（用空格隔开）：秒 分 小时 月份中的日期 月份 星期中的日期 年份 二.各字段的含义   字段 允许值 允许特殊字符     秒（Seconds） 0~59的整数 ,">
   
   
     <link rel="icon" href="/yangblog//favicon.ico">
@@ -146,7 +146,9 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>&emsp;&emsp;Cron表达式在quartz和spring定时任务中都有使用到,用来设置任务执行时间执行间隔.</p>
+            <blockquote>
+<p>文章转载于<a href="https://www.cnblogs.com/javahr/p/8318728.html" target="_blank" rel="noopener">cron表达式详解</a><br>&emsp;&emsp;Cron表达式在quartz和spring定时任务中都有使用到,用来设置任务执行时间执行间隔.</p>
+</blockquote>
 <h3 id="一-结构"><a href="#一-结构" class="headerlink" title="一.结构:"></a>一.结构:</h3><p>&emsp;&emsp;cron表达式的结构如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">corn从左到右（用空格隔开）：秒 分 小时 月份中的日期 月份 星期中的日期 年份</span><br></pre></td></tr></table></figure></p>
 <h3 id="二-各字段的含义"><a href="#二-各字段的含义" class="headerlink" title="二.各字段的含义"></a>二.各字段的含义</h3><table>
 <thead>
@@ -194,13 +196,54 @@
 </tr>
 </tbody>
 </table>
+<p>每一个域都使用数字，但还可以出现如下特殊字符，它们的含义是：</p>
+<p>　　（1）<em>：表示匹配该域的任意值。假如在Minutes域使用</em>, 即表示每分钟都会触发事件。</p>
+<p>　　（2）?：只能用在DayofMonth和DayofWeek两个域。它也匹配域的任意值，但实际不会。因为DayofMonth和DayofWeek会相互影响。例如想在每月的20日触发调度，不管20日到底是星期几，则只能使用如下写法： 13 13 15 20 <em> ?, 其中最后一位只能用？，而不能使用</em>，如果使用*表示不管星期几都会触发，实际上并不是这样。</p>
+<p>　　（3）-：表示范围。例如在Minutes域使用5-20，表示从5分到20分钟每分钟触发一次 </p>
+<p>　　（4）/：表示起始时间开始触发，然后每隔固定时间触发一次。例如在Minutes域使用5/20,则意味着5分钟触发一次，而25，45等分别触发一次. </p>
+<p>　　（5）,：表示列出枚举值。例如：在Minutes域使用5,20，则意味着在5和20分每分钟触发一次。 </p>
+<p>　　（6）L：表示最后，只能出现在DayofWeek和DayofMonth域。如果在DayofWeek域使用5L,意味着在最后的一个星期四触发。 </p>
+<p>　　（7）W:表示有效工作日(周一到周五),只能出现在DayofMonth域，系统将在离指定日期的最近的有效工作日触发事件。例如：在 DayofMonth使用5W，如果5日是星期六，则将在最近的工作日：星期五，即4日触发。如果5日是星期天，则在6日(周一)触发；如果5日在星期一到星期五中的一天，则就在5日触发。另外一点，W的最近寻找不会跨过月份 。</p>
+<p>　　（8）LW:这两个字符可以连用，表示在某个月最后一个工作日，即最后一个星期五。 </p>
+<p>　　（9）#:用于确定每个月第几个星期几，只能出现在DayofMonth域。例如在4#2，表示某月的第二个星期三。</p>
+<h3 id="三-常用表达式例子"><a href="#三-常用表达式例子" class="headerlink" title="三.常用表达式例子"></a>三.常用表达式例子</h3><p>　　（1）0 0 2 1 <em> ? </em>   表示在每月的1日的凌晨2点调整任务</p>
+<p>　　（2）0 15 10 ? * MON-FRI   表示周一到周五每天上午10:15执行作业</p>
+<p>　　（3）0 15 10 ? 6L 2002-2006   表示2002-2006年的每个月的最后一个星期五上午10:15执行作</p>
+<p>　　（4）0 0 10,14,16 <em> </em> ?   每天上午10点，下午2点，4点 </p>
+<p>　　（5）0 0/30 9-17 <em> </em> ?   朝九晚五工作时间内每半小时 </p>
+<p>　　（6）0 0 12 ? * WED    表示每个星期三中午12点 </p>
+<p>　　（7）0 0 12 <em> </em> ?   每天中午12点触发 </p>
+<p>　　（8）0 15 10 ? <em> </em>    每天上午10:15触发 </p>
+<p>　　（9）0 15 10 <em> </em> ?     每天上午10:15触发 </p>
+<p>　　（10）0 15 10 <em> </em> ? *    每天上午10:15触发 </p>
+<p>　　（11）0 15 10 <em> </em> ? 2005    2005年的每天上午10:15触发 </p>
+<p>　　（12）0 <em> 14 </em> * ?     在每天下午2点到下午2:59期间的每1分钟触发 </p>
+<p>　　（13）0 0/5 14 <em> </em> ?    在每天下午2点到下午2:55期间的每5分钟触发 </p>
+<p>　　（14）0 0/5 14,18 <em> </em> ?     在每天下午2点到2:55期间和下午6点到6:55期间的每5分钟触发 </p>
+<p>　　（15）0 0-5 14 <em> </em> ?    在每天下午2点到下午2:05期间的每1分钟触发 </p>
+<p>　　（16）0 10,44 14 ? 3 WED    每年三月的星期三的下午2:10和2:44触发 </p>
+<p>　　（17）0 15 10 ? * MON-FRI    周一至周五的上午10:15触发 </p>
+<p>　　（18）0 15 10 15 * ?    每月15日上午10:15触发 </p>
+<p>　　（19）0 15 10 L * ?    每月最后一日的上午10:15触发 </p>
+<p>　　（20）0 15 10 ? * 6L    每月的最后一个星期五上午10:15触发 </p>
+<p>　　（21）0 15 10 ? * 6L 2002-2005   2002年至2005年的每月的最后一个星期五上午10:15触发 </p>
+<p>　　（22）0 15 10 ? * 6#3   每月的第三个星期五上午10:15触发</p>
+<h3 id="四-注意事项"><a href="#四-注意事项" class="headerlink" title="四.注意事项"></a>四.注意事项</h3><p>（1）有些子表达式能包含一些范围或列表</p>
+<p>　　例如：子表达式（天（星期））可以为 “MON-FRI”，“MON，WED，FRI”，“MON-WED,SAT”</p>
+<p>“*”字符代表所有可能的值</p>
+<p>　　因此，“<em>”在子表达式（月）里表示每个月的含义，“</em>”在子表达式（天（星期））表示星期的每一天</p>
+<p>　　“/”字符用来指定数值的增量<br>　　例如：在子表达式（分钟）里的“0/15”表示从第0分钟开始，每15分钟<br>在子表达式（分钟）里的“3/20”表示从第3分钟开始，每20分钟（它和“3，23，43”）的含义一样</p>
+<p>　　“？”字符仅被用于天（月）和天（星期）两个子表达式，表示不指定值<br>　　当2个子表达式其中之一被指定了值以后，为了避免冲突，需要将另一个子表达式的值设为“？”</p>
+<p>　　“L” 字符仅被用于天（月）和天（星期）两个子表达式，它是单词“last”的缩写<br>　　但是它在两个子表达式里的含义是不同的。<br>　　在天（月）子表达式中，“L”表示一个月的最后一天<br>　　在天（星期）自表达式中，“L”表示一个星期的最后一天，也就是SAT</p>
+<p>　　如果在“L”前有具体的内容，它就具有其他的含义了</p>
+<p>　　例如：“6L”表示这个月的倒数第６天，“FRIL”表示这个月的最一个星期五<br>　　注意：在使用“L”参数时，不要指定列表或范围，因为这会导致问题</p>
 <blockquote>
 <p>纸上得来终觉浅,绝知此事要躬行</p>
 </blockquote>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年05月07日 14:50</p>
+        <p>最后更新： 2018年05月07日 16:20</p>
         <p>原始链接： <a class="post-url" href="/yangblog/20180507/springboot5/" title="SpringBoot之Cron表达式">amosewarrior.github.io/20180507/springboot5/</a></p>
         <footer>
             <a href="amosewarrior.github.io">
@@ -320,7 +363,7 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-结构"><span class="post-toc-text">一.结构:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-各字段的含义"><span class="post-toc-text">二.各字段的含义</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-结构"><span class="post-toc-text">一.结构:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-各字段的含义"><span class="post-toc-text">二.各字段的含义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三-常用表达式例子"><span class="post-toc-text">三.常用表达式例子</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四-注意事项"><span class="post-toc-text">四.注意事项</span></a></li></ol>
         </nav>
     </aside>
     
