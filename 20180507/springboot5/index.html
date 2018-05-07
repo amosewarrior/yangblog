@@ -8,18 +8,18 @@
   
     <meta name="keywords" content="Amose's Blog" />
   
-  <meta name="description" content="&amp;emsp;&amp;emsp;Cron表达式在quartz和spring定时任务中都有使用到,用来设置任务执行时间执行间隔. 一.结构:&amp;emsp;&amp;emsp;cron表达式的结构如下:1corn从左到右（用空格隔开）：秒 分 小时 月份中的日期 月份 星期中的日期 年份 二.各字段的含义   id name     1 A1   2 A2   3 A3     纸上得来终觉浅,绝知此事要躬行">
+  <meta name="description" content="&amp;emsp;&amp;emsp;Cron表达式在quartz和spring定时任务中都有使用到,用来设置任务执行时间执行间隔. 一.结构:&amp;emsp;&amp;emsp;cron表达式的结构如下:1corn从左到右（用空格隔开）：秒 分 小时 月份中的日期 月份 星期中的日期 年份 二.各字段的含义   字段 允许值 允许特殊字符     秒（Seconds） 0~59的整数 , - * /    四个字符">
 <meta name="keywords" content="java,SpringBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot之Cron表达式">
 <meta property="og:url" content="amosewarrior.github.io/20180507/springboot5/index.html">
 <meta property="og:site_name" content="Yang&#39;s Blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;Cron表达式在quartz和spring定时任务中都有使用到,用来设置任务执行时间执行间隔. 一.结构:&amp;emsp;&amp;emsp;cron表达式的结构如下:1corn从左到右（用空格隔开）：秒 分 小时 月份中的日期 月份 星期中的日期 年份 二.各字段的含义   id name     1 A1   2 A2   3 A3     纸上得来终觉浅,绝知此事要躬行">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;Cron表达式在quartz和spring定时任务中都有使用到,用来设置任务执行时间执行间隔. 一.结构:&amp;emsp;&amp;emsp;cron表达式的结构如下:1corn从左到右（用空格隔开）：秒 分 小时 月份中的日期 月份 星期中的日期 年份 二.各字段的含义   字段 允许值 允许特殊字符     秒（Seconds） 0~59的整数 , - * /    四个字符">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2018-05-07T05:42:16.724Z">
+<meta property="og:updated_time" content="2018-05-07T06:31:01.414Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot之Cron表达式">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;Cron表达式在quartz和spring定时任务中都有使用到,用来设置任务执行时间执行间隔. 一.结构:&amp;emsp;&amp;emsp;cron表达式的结构如下:1corn从左到右（用空格隔开）：秒 分 小时 月份中的日期 月份 星期中的日期 年份 二.各字段的含义   id name     1 A1   2 A2   3 A3     纸上得来终觉浅,绝知此事要躬行">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;Cron表达式在quartz和spring定时任务中都有使用到,用来设置任务执行时间执行间隔. 一.结构:&amp;emsp;&amp;emsp;cron表达式的结构如下:1corn从左到右（用空格隔开）：秒 分 小时 月份中的日期 月份 星期中的日期 年份 二.各字段的含义   字段 允许值 允许特殊字符     秒（Seconds） 0~59的整数 , - * /    四个字符">
   
   
     <link rel="icon" href="/yangblog//favicon.ico">
@@ -151,32 +151,27 @@
 <h3 id="二-各字段的含义"><a href="#二-各字段的含义" class="headerlink" title="二.各字段的含义"></a>二.各字段的含义</h3><table>
 <thead>
 <tr>
-<th style="text-align:left">id</th>
-<th style="text-align:left">name</th>
+<th style="text-align:left">字段</th>
+<th style="text-align:left">允许值</th>
+<th>允许特殊字符</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">1</td>
-<td style="text-align:left">A1</td>
-</tr>
-<tr>
-<td style="text-align:left">2</td>
-<td style="text-align:left">A2</td>
-</tr>
-<tr>
-<td style="text-align:left">3</td>
-<td style="text-align:left">A3</td>
+<td style="text-align:left">秒（Seconds）</td>
+<td style="text-align:left">0~59的整数</td>
+<td>, - * /    四个字符</td>
 </tr>
 </tbody>
 </table>
+<p>分（Minutes）|    0~59的整数|    , - <em> /    四个字符|<br>小时（Hours）|    0~23的整数|    , - </em> /    四个字符|<br>日期（DayofMonth）|    1~31的整数（但是你需要考虑你月的天数）|    ,- <em> ? / L W C     八个字符|<br>月份（Month）|    1~12的整数或者 JAN-DEC|    , - </em> /    四个字符<br>星期（DayofWeek）|    1~7的整数或者 SUN-SAT （1=SUN）|    , - <em> ? / L C #     八个字符|<br>年(可选，留空)（Year）|    1970~2099|    , - </em> /    四个字符|</p>
 <blockquote>
 <p>纸上得来终觉浅,绝知此事要躬行</p>
 </blockquote>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年05月07日 13:42</p>
+        <p>最后更新： 2018年05月07日 14:31</p>
         <p>原始链接： <a class="post-url" href="/yangblog/20180507/springboot5/" title="SpringBoot之Cron表达式">amosewarrior.github.io/20180507/springboot5/</a></p>
         <footer>
             <a href="amosewarrior.github.io">
