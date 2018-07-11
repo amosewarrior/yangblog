@@ -3,26 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>SpringBoot之Unsupported major.minor version 52.0(idea版) | Yang&#39;s Blog</title>
+  <title>volatile关键字 | Yang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Amose's Blog" />
   
-  <meta name="description" content="&amp;emsp;&amp;emsp;在进行springboot demo启动时,出现了Unsupported major.minor version 52.0 的错误.这是因为springboot的需求版本跟java的目标版本不一致.共需要修改两个地方.">
-<meta name="keywords" content="java,SpringBoot">
+  <meta name="description" content="&amp;emsp;&amp;emsp;本篇中,简要的说一下自己对volatile的理解 一.内存模型:&amp;emsp;&amp;emsp;在JMM中,存在一个主存,所有的变量都是存在主存中,对所有的线程共享,而线程对于数据的操作是在工作内存中.每个工作内存中的数据都是对主存中数据的拷贝,线程之间无法互相访问,传递值都需要通过主存完成. ####1.JMM中为啥需要工作内存&amp;emsp;&amp;emsp;现在的计算机，cpu在计算的">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot之Unsupported major.minor version 52.0(idea版)">
-<meta property="og:url" content="amosewarrior.github.io/20180501/springboot3/index.html">
+<meta property="og:title" content="volatile关键字">
+<meta property="og:url" content="amosewarrior.github.io/20180618/volatile/index.html">
 <meta property="og:site_name" content="Yang&#39;s Blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;在进行springboot demo启动时,出现了Unsupported major.minor version 52.0 的错误.这是因为springboot的需求版本跟java的目标版本不一致.共需要修改两个地方.">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;本篇中,简要的说一下自己对volatile的理解 一.内存模型:&amp;emsp;&amp;emsp;在JMM中,存在一个主存,所有的变量都是存在主存中,对所有的线程共享,而线程对于数据的操作是在工作内存中.每个工作内存中的数据都是对主存中数据的拷贝,线程之间无法互相访问,传递值都需要通过主存完成. ####1.JMM中为啥需要工作内存&amp;emsp;&amp;emsp;现在的计算机，cpu在计算的">
 <meta property="og:locale" content="Chinese">
-<meta property="og:image" content="amosewarrior.github.io/img/springboot/3/1.png">
-<meta property="og:image" content="amosewarrior.github.io/img/springboot/3/2.png">
-<meta property="og:updated_time" content="2018-05-04T04:07:22.282Z">
+<meta property="og:updated_time" content="2018-06-19T04:25:11.289Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringBoot之Unsupported major.minor version 52.0(idea版)">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;在进行springboot demo启动时,出现了Unsupported major.minor version 52.0 的错误.这是因为springboot的需求版本跟java的目标版本不一致.共需要修改两个地方.">
-<meta name="twitter:image" content="amosewarrior.github.io/img/springboot/3/1.png">
+<meta name="twitter:title" content="volatile关键字">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本篇中,简要的说一下自己对volatile的理解 一.内存模型:&amp;emsp;&amp;emsp;在JMM中,存在一个主存,所有的变量都是存在主存中,对所有的线程共享,而线程对于数据的操作是在工作内存中.每个工作内存中的数据都是对主存中数据的拷贝,线程之间无法互相访问,传递值都需要通过主存完成. ####1.JMM中为啥需要工作内存&amp;emsp;&amp;emsp;现在的计算机，cpu在计算的">
   
   
     <link rel="icon" href="/yangblog//favicon.ico">
@@ -113,14 +110,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-springboot3" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-volatile" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      SpringBoot之Unsupported major.minor version 52.0(idea版)
+      volatile关键字
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -128,12 +125,12 @@
               <li>
                   <i class="fa fa-book"></i>
                   
-                      <a href="/yangblog/categories/SpringBoot/">SpringBoot</a>
+                      <a href="/yangblog/categories/同步与并发/">同步与并发</a>
                   
               </li>
           
         <li>
-          <i class="fa fa-calendar"></i>  2018-05-01
+          <i class="fa fa-calendar"></i>  2018-06-18
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -149,12 +146,28 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>&emsp;&emsp;在进行springboot demo启动时,出现了Unsupported major.minor version 52.0 的错误.这是因为springboot的需求版本跟java的目标版本不一致.<br>共需要修改两个地方.<br><img src="../../img/springboot/3/1.png" alt=""><br><img src="../../img/springboot/3/2.png" alt=""></p>
+            <p>&emsp;&emsp;本篇中,简要的说一下自己对volatile的理解</p>
+<h3 id="一-内存模型"><a href="#一-内存模型" class="headerlink" title="一.内存模型:"></a>一.内存模型:</h3><p>&emsp;&emsp;在JMM中,存在一个主存,所有的变量都是存在主存中,对所有的线程共享,而线程对于数据的操作是在工作内存中.每个工作内存中的数据都是对主存中数据的拷贝,线程之间无法互相访问,传递值都需要通过主存完成.</p>
+<p>####1.JMM中为啥需要工作内存<br>&emsp;&emsp;现在的计算机，cpu在计算的时候，并不总是从内存读取数据，它的数据读取顺序优先级 是：寄存器－高速缓存－内存。线程耗费的是CPU，线程计算的时候，原始的数据来自内存，在计算过程中，有些数据可能被频繁读取，这些数据被存储在寄存器和高速缓存中，当线程计算完后，这些缓存的数据在适当的时候应该写回内存。所以,JVM会将内存中的变量拷贝副本到工作内存中,然后再进行操作.</p>
+<p>####2.工作内存造成的问题<br>多CPU并行读写某个共享变量时,由于操作是在主存中,所以会出现线程并发安全问题.</p>
+<p>####3.工作内存与主存的交互协议<br>缓存一致性协议:MESI协议,用于保证缓存的一致性.即当CPU缓存中被缓存的共享变量被修改后进行写数据时,其他CPU缓存中的副本就会变成invalid失效的,然后要在缓存中读取数据到cpu执行引擎中时就会去内存中重新拷贝副本到工作内存中.<br>保证各缓存中<br>M:缓存中数据被修改<br>E:只有一个缓存汇总有该数据<br>S:多个缓存中都有该数据<br>I:当该缓存中的数据再其他缓存中被修改后,该缓存中的数据就不可用了.</p>
+<p>####4.主存与工作内存中的8个原子性步骤<br>lock（锁定）：作用于主内存的变量，它把一个变量标识为一条线程独占的状态<br>unlock（解锁）：作用于主内存的变量，释放锁定状态的变量<br>read（读取）：作用于主内存的变量，把一个变量从主内存传输到线程的工作内存中，以便随后的load动作使用<br>load（载入）：作用于工作内存的变量，把read操作从主内存中得到的变量值放入工作内存的变量副本中。<br>use（使用）：作用于工作内存的变量，把工作内存中一个变量的值传递给执行引擎，每当虚拟机遇到一个需要使用到变量的值的字节码指令时将会执行这个操作<br>assign（赋值）：作用于工作内存的变量，把一个从执行引擎收到的值赋给工作内存的变量，每当虚拟机遇到一个给变量赋值的字节码指令时将会执行这个操作<br>store（存储）：作用于工作内存的变量，把工作内存的一个变量值传送到主内存，以便随后的write操作使用<br>write（写入）：作用于主内存的变量，把store操作从工作内存得到的变量的值放入主内存变量中。</p>
+<h3 id="二-并发编程三大特性"><a href="#二-并发编程三大特性" class="headerlink" title="二.并发编程三大特性"></a>二.并发编程三大特性</h3><p>####1.原子性<br>&emsp;&emsp;原子性是指一个原子操作在cpu中不可以暂停然后再调度，既不被中断操作，要不执行完成，要不就不执行。原子操作保证了原子性问题。<br>在java内存模型中,read与load  assign和store必须成对出现,这样保证了对基础数据的读取和赋值操作是原子性的.在java中我们可以通过synchronized,Lock,volatile+cas保证原子性</p>
+<p>####2.有序性<br>&emsp;&emsp;</p>
+<p>####3.可见性:　<br>&emsp;&emsp;java 内存模型的主内存和工作内存，解决了可见性问题。<br>&emsp;&emsp;volatile赋予了变量可见——禁止编译器对成员变量进行优化，它修饰的成员变量在每次被线程访问时，<br>都强迫从内存中重读该成员变量的值；而且，当成员变量发生变化时，强迫线程将变化值回写到共享内存，<br>这样在任何时刻两个不同线程总是看到某一成员变量的同一个值，这就是保证了可见性。普通变量是无法保证的.</p>
+<h3 id="四-volatile如何保证有序性"><a href="#四-volatile如何保证有序性" class="headerlink" title="四.volatile如何保证有序性"></a>四.volatile如何保证有序性</h3><p>写volatile的时候生成汇编码是 lock addl $0x0, (%rsp), 在写操作之前使用了lock前缀，锁住了总线和对应的地址，这样其他的写和读都要等待锁的释放。当写完成后，释放锁，把缓存刷新到主内存。</p>
+<ol>
+<li>读volatile就很好理解了，不需要额外的汇编指令，CPU发现对应地址的缓存被锁了，等待锁的释放，缓存一致性协议会保证它读到最新的值。 </li>
+<li>只需要对写volatile的使用用lock对总线加锁就行了，这样其他的读、写操作等待总线释放才能继续读。Lock会让其他CPU的缓存invalide，从内存重新加载数据。</li>
+</ol>
+<blockquote>
+<p>纸上得来终觉浅,绝知此事要躬行</p>
+</blockquote>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年05月04日 12:07</p>
-        <p>原始链接： <a class="post-url" href="/yangblog/20180501/springboot3/" title="SpringBoot之Unsupported major.minor version 52.0(idea版)">amosewarrior.github.io/20180501/springboot3/</a></p>
+        <p>最后更新： 2018年06月19日 12:25</p>
+        <p>原始链接： <a class="post-url" href="/yangblog/20180618/volatile/" title="volatile关键字">amosewarrior.github.io/20180618/volatile/</a></p>
         <footer>
             <a href="amosewarrior.github.io">
                 <img src="/yangblog/images/logo.png" alt="Amose  Yang">
@@ -211,7 +224,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=amosewarrior.github.io/20180501/springboot3/&title=《SpringBoot之Unsupported major.minor version 52.0(idea版)》 — Yang's Blog&pic=/img/springboot/cover.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=amosewarrior.github.io/20180618/volatile/&title=《volatile关键字》 — Yang's Blog&pic=/img/synchronized/cover.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -221,22 +234,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=amosewarrior.github.io/20180501/springboot3/&title=《SpringBoot之Unsupported major.minor version 52.0(idea版)》 — Yang's Blog&source=read,think,share" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=amosewarrior.github.io/20180618/volatile/&title=《volatile关键字》 — Yang's Blog&source=read,think,share" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=amosewarrior.github.io/20180501/springboot3/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=amosewarrior.github.io/20180618/volatile/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《SpringBoot之Unsupported major.minor version 52.0(idea版)》 — Yang's Blog&url=amosewarrior.github.io/20180501/springboot3/&via=amosewarrior.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《volatile关键字》 — Yang's Blog&url=amosewarrior.github.io/20180618/volatile/&via=amosewarrior.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=amosewarrior.github.io/20180501/springboot3/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=amosewarrior.github.io/20180618/volatile/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -246,7 +259,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=amosewarrior.github.io/20180501/springboot3/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=amosewarrior.github.io/20180618/volatile/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -260,8 +273,6 @@
       
     <a href="/yangblog/tags/java/" class="color5">java</a>
       
-    <a href="/yangblog/tags/SpringBoot/" class="color1">SpringBoot</a>
-      
   </li>
 
         </ul>
@@ -271,22 +282,28 @@
 </article>
 
 
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-内存模型"><span class="post-toc-text">一.内存模型:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-并发编程三大特性"><span class="post-toc-text">二.并发编程三大特性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四-volatile如何保证有序性"><span class="post-toc-text">四.volatile如何保证有序性</span></a></li></ol>
+        </nav>
+    </aside>
+    
 
 <nav id="article-nav">
   
-    <a href="/yangblog/20180507/springboot4/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/yangblog/20180711/文学文件上传接口说明/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          SpringBoot之Schedule定时任务
+          (no title)
         
       </span>
     </a>
   
   
-    <a href="/yangblog/20180428/springboot2/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">SpringBoot之Restful Web Service</span>
+    <a href="/yangblog/20180515/springboot9/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">SpringBoot之文件上传下载</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
